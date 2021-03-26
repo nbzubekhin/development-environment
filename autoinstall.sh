@@ -32,16 +32,15 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'rhysd/vim-clang-format'
 call plug#end()
 
-colorscheme sublimemonokai
-
 set t_Co=256
 set term=screen-256color
+colorscheme sublimemonokai
 
 " Whitespace
 set shiftwidth=2
 set softtabstop=2
 
-set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
+"set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
@@ -53,6 +52,8 @@ map <C-o> :NERDTreeToggle<CR>
 map <C-l> :NERDTreeClose<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F3> :AsyncRun ctags -R<CR>
+nmap <F9> :set syntax=whitespace<CR>
+nmap <F10> :syntax on<CR>
 
 let g:tagbar_type_cpp = {
     \ 'kinds' : [
@@ -75,20 +76,17 @@ let g:tagbar_type_cpp = {
 
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {}
-let g:clang_format#style_options.TabWidth = 4
-let g:clang_format#style_options.UseTab = 'Never'
+let g:clang_format#style_options.UseTab = 'Always'
 let g:clang_format#style_options.IndentWidth = 4
-let g:clang_format#style_options.IndentPPDirectives = 'BeforeHash'
 let g:clang_format#style_options.AccessModifierOffset = -4
 let g:clang_format#style_options.AllowShortIfStatementsOnASingleLine = 'false'
 let g:clang_format#style_options.IndentCaseLabels = 'true'
-let g:clang_format#style_options.AllowShortFunctionsOnASingleLine = 'false'
+let g:clang_format#style_options.AllowShortFunctionsOnASingleLine = 'true'
 let g:clang_format#style_options.AlignConsecutiveDeclarations = 'true'
-let g:clang_format#style_options.AlignConsecutiveMacros = 'true'
 let g:clang_format#style_options.AlignTrailingComments = 'true'
 let g:clang_format#style_options.BinPackArguments = 'false'
 let g:clang_format#style_options.BinPackParameters = 'false'
-let g:clang_format#style_options.ColumnLimit = '120'
+let g:clang_format#style_options.ColumnLimit = '130'
 let g:clang_format#style_options.Standard = 'C++11'
 let g:clang_format#style_options.AlignEscapedNewlines = 'Right'
 let g:clang_format#style_options.AlignConsecutiveAssignments = 'true'

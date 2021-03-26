@@ -6,12 +6,12 @@ Building vim + tmux in Linux into an effective C/C++/(and other languages) progr
 
 ### Via curl
 ```
-curl -o - https://raw.githubusercontent.com/nbzubekhin/development-environment/master/autoinstall.sh | sh
+bash <(curl --silent https://raw.githubusercontent.com/nbzubekhin/development-environment/master/autoinstall.sh)
 
 ```
 
 ### Via wget
 
 ```
-wget -O - https://raw.githubusercontent.com/nbzubekhin/development-environment/master/autoinstall.sh | sh
+bash <(wget -O - https://raw.githubusercontent.com/nbzubekhin/development-environment/master/autoinstall.sh)
 ```

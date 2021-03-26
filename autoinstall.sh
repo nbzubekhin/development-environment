@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 make_config_file_tmux() {
 
@@ -34,7 +34,7 @@ call plug#end()
 
 set t_Co=256
 set term=screen-256color
-colorscheme sublimemonokai
+silent! colorscheme sublimemonokai
 
 " Whitespace
 set shiftwidth=2

@@ -30,6 +30,8 @@ Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'umaumax/vim-cmake-format'
+Plug 'iberianpig/tig-explorer.vim'
 call plug#end()
 
 set t_Co=256
@@ -39,8 +41,6 @@ silent! colorscheme sublimemonokai
 " Whitespace
 set shiftwidth=2
 set softtabstop=2
-
-"set guifont=Fura\ Code\ Light\ Nerd\ Font\ Complete:h16
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
@@ -93,6 +93,30 @@ let g:clang_format#style_options.AlignConsecutiveAssignments = 'true'
 
 nnoremap <C-f> :ClangFormat<CR>
 vnoremap <C-f> :ClangFormat<CR>
+" Hot keys for cmake-format
+nnoremap <C-m> :CmakeFormat<CR>
+vnoremap <C-m> :CmakeFormat<CR>
+
+" Open tig with current file
+nnoremap <ESC>T :TigOpenCurrentFile<CR>
+
+" Open tig with Project root path
+nnoremap <ESC>t :TigOpenProjectRootDir<CR>
+
+" Open tig grep
+nnoremap <ESC>g :TigGrep<CR>
+
+" Resume from last grep
+nnoremap <ESC>r :TigGrepResume<CR>
+
+" Open tig grep with the selected word
+vnoremap <ESC>g y:TigGrep<Space><C-R>"<CR>
+
+" Open tig grep with the word under the cursor
+nnoremap <ESC>cg :<C-u>:TigGrep<Space><C-R><C-W><CR>
+
+" Open tig blame with current file
+nnoremap <ESC>b :TigBlame<CR>
 EOF
 
 }

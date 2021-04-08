@@ -32,6 +32,9 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'umaumax/vim-cmake-format'
 Plug 'iberianpig/tig-explorer.vim'
+Plug 'skanehira/preview-markdown.vim'
+Plug 'junkblocker/patchreview-vim'
+Plug 'codegram/vim-codereview'
 call plug#end()
 
 set t_Co=256
@@ -41,6 +44,10 @@ silent! colorscheme sublimemonokai
 " Whitespace
 set shiftwidth=2
 set softtabstop=2
+
+" Options for Markdown Plugin
+let g:preview_markdown_vertical = 1
+let g:preview_markdown_auto_update = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#keymap#enabled = 0
@@ -93,9 +100,13 @@ let g:clang_format#style_options.AlignConsecutiveAssignments = 'true'
 
 nnoremap <C-f> :ClangFormat<CR>
 vnoremap <C-f> :ClangFormat<CR>
+
 " Hot keys for cmake-format
 nnoremap <C-m> :CmakeFormat<CR>
 vnoremap <C-m> :CmakeFormat<CR>
+
+" Execute markdown render with current file
+nnoremap <ESC>mk :PreviewMarkdown<CR>
 
 " Open tig with current file
 nnoremap <ESC>T :TigOpenCurrentFile<CR>

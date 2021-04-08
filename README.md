@@ -1,6 +1,6 @@
 # Development environment: Tmux + VIM + VIM's Plugins
 
-Building vim + tmux in Linux into an effective C/C++/(and other languages) programming IDE.
+Building **vim** + **tmux** in Linux into an effective C/C++/(and other languages) programming IDE.
 
 # Keymap on VIM
 
